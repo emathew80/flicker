@@ -1,5 +1,4 @@
 package com.example.elsonmathew.flickrclone;
-
 import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 

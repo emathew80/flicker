@@ -1,5 +1,4 @@
 package com.example.elsonmathew.flickrclone.Model;
-
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 

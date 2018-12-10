@@ -1,5 +1,4 @@
 package com.example.elsonmathew.flickrclone.Model;
-
 import java.io.Serializable;
 
 public class FlickrFeed implements Serializable {

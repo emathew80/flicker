@@ -1,8 +1,4 @@
 package com.example.elsonmathew.flickrclone.Network;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 

@@ -1,11 +1,7 @@
 package com.example.elsonmathew.flickrclone.Model;
-
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import com.example.elsonmathew.flickrclone.Model.Media;
 import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 public class Items implements Serializable, Parcelable {

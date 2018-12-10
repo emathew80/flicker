@@ -1,18 +1,19 @@
 package com.example.elsonmathew.flickrclone.Fragments;
-
 import android.content.res.Resources;
 import android.os.Bundle;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import android.os.Debug;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.elsonmathew.flickrclone.Model.Items;
 import com.example.elsonmathew.flickrclone.R;
 import com.squareup.picasso.Picasso;
@@ -44,7 +45,7 @@ public class FieldFragment extends Fragment {
         TextView text2 = v.findViewById(R.id.textView2);        //grab the right element to set Author
         TextView text3 = v.findViewById(R.id.textView3);   //grab the right element to set title
         TextView text4 = v.findViewById(R.id.textView4);
-//        clickableTags(tags, text4, v);
+        clickableTags(tags, text4, v);
         text.setText(String.format(res.getString(R.string.title),title));    //Set the title
         text2.setText(String.format(res.getString(R.string.author),author));//Set the Author
         text3.setText(String.format(res.getString(R.string.date_taken),dateTaken));    //Set the Date Taken
@@ -58,23 +59,21 @@ public class FieldFragment extends Fragment {
         super.onDestroyView();
     }
 
-//    private void clickableTags(String tags, TextView textView, View v){
-//
-//        String str = getString(R.string.tags, tags);
-//        SpannableString ss = new SpannableString(str);
-//        Toast.makeText(getActivity(), "get state " + bottomSheetBehavior.getState(), Toast.LENGTH_SHORT).show();
-//        ClickableSpan clickableSpan = new ClickableSpan() {
-//            @Override
-//            public void onClick(@NonNull View widget) {
-//                bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-//                Toast.makeText(getActivity(), "get state " + bottomSheetBehavior.getState(), Toast.LENGTH_SHORT).show();
-//            }
-//        };
-//
-//        ss.setSpan(clickableSpan, 6, str.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-//        textView.setText(ss);
-//        textView.setMovementMethod(LinkMovementMethod.getInstance());
-//    }
+    private void clickableTags(String tags, TextView textView, View v){
+
+        String str = getString(R.string.tags, tags);
+        SpannableString ss = new SpannableString(str);
+        ClickableSpan clickableSpan = new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) {
+                Log.d("Clickable Tags", "on click");
+            }
+        };
+
+        ss.setSpan(clickableSpan, 6, str.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(ss);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+    }
 
 
     private String parseAuthorText(String text){

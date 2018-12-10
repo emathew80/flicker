@@ -1,7 +1,5 @@
 package com.example.elsonmathew.flickrclone.Network;
-
 import com.example.elsonmathew.flickrclone.Model.FlickrResponse;
-
 import retrofit2.Call;
 import retrofit2.http.GET;
 

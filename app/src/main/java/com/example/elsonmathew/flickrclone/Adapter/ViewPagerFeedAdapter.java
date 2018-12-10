@@ -1,19 +1,13 @@
 package com.example.elsonmathew.flickrclone.Adapter;
-
 import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-
 import android.util.Log;
 import android.view.ViewGroup;
-
 import com.example.elsonmathew.flickrclone.Fragments.FieldFragment;
 import com.example.elsonmathew.flickrclone.Model.Items;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import static androidx.viewpager.widget.PagerAdapter.POSITION_NONE;
 
 public class ViewPagerFeedAdapter extends FragmentStatePagerAdapter {
 

@@ -20,6 +20,7 @@ import me.relex.circleindicator.CircleIndicator;
 public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeRefreshLayout;
     private ViewPagerFeedAdapter adapter;
+    private FlickerFeedViewModel feedModel;
 
 
     @Override
@@ -28,31 +29,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ViewPager viewPager = findViewById(R.id.ViewPager);
         adapter = new ViewPagerFeedAdapter(getSupportFragmentManager());
+        feedModel = ViewModelProviders.of(this).get(FlickerFeedViewModel.class);
+        swipeRefreshLayout = findViewById(R.id.swiperefreshlayout);
         viewPager.setAdapter(adapter);
         viewPagerIndicator(viewPager);
         viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
-        swipeRefreshLayout = findViewById(R.id.swiperefreshlayout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                Log.d("78741", "REFRESH TRIGGERED");
-                getFeeds();
-                swipeRefreshLayout.setRefreshing(false);
-
-            }
-        });
-        getFeeds();
+        swipeRefreshListener();
+        setupFeedViewModel();
         setupFAB();
         setSwipeListener();
     }
 
-    private void getFeeds(){
-        FlickerFeedViewModel feedModel = ViewModelProviders.of(this).get(FlickerFeedViewModel.class);
+
+
+    private void swipeRefreshListener() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Log.d("78741", "REFRESH TRIGGERED");
+                feedModel.loadFeed();
+                swipeRefreshLayout.setRefreshing(false);
+
+            }
+        });
+    }
+
+
+
+    private void setupFeedViewModel(){
         feedModel.getFeeds().observe(this, feeds -> {
             adapter.updateData(feeds);
 
         });
     }
+
+
 
     private void setupFAB() {
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -64,11 +75,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void viewPagerIndicator(ViewPager vp) {
         CircleIndicator indicator = findViewById(R.id.indicator);
         indicator.setViewPager(vp);
         adapter.registerDataSetObserver(indicator.getDataSetObserver());
     }
+
+
 
     private void setSwipeListener() {
         ViewPager viewPager = findViewById(R.id.ViewPager);
@@ -85,4 +100,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
