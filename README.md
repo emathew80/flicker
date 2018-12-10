@@ -8,6 +8,16 @@
 
 > Clone repo, open in Android Studio, press play. Emulated on Nexus 6, tested on Google Pixel and Samsung Note 9. Any issues please feel free to contact maintainer -- emathew.dev@gmail.com
 
+## Known Bugs:
+
+> No reported bugs at this time.
+
+## Forward Development:
+
+ - Add new details fragment
+ - Filter new search by tag
+ - Make app more material in appearance and design
+
 ## Screenshots
 
 ![alt text](https://i.ibb.co/Tg6Y33S/Flicker1.png)
