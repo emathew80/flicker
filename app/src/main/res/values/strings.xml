@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FlickrClone</string>
+    <string name="title">Title: %1$s</string>
+    <string name="author">Author: %1$s</string>
+    <string name="date_taken">Date Taken: %1$s</string>
+    <string name="tags">Tags: %1$s</string>
 </resources>
