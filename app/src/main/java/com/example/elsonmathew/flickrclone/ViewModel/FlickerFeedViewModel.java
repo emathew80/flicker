@@ -31,7 +31,6 @@ public class FlickerFeedViewModel extends ViewModel {
 			@Override
 			public void onResponse(Call<FlickrResponse> call, Response<FlickrResponse> response) {
 				flickerFeedsList.setValue(response.body().items);
-
 			}
 
 			@Override
