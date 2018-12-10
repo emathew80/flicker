@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        fetchNewFlickerFeed();
         ViewPager viewPager = findViewById(R.id.ViewPager);
         adapter = new ViewPagerFeedAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
@@ -70,31 +69,6 @@ public class MainActivity extends AppCompatActivity {
         indicator.setViewPager(vp);
         adapter.registerDataSetObserver(indicator.getDataSetObserver());
     }
-
-
-
-//    private void fetchNewFlickerFeed(){
-//        GetDataService service = RetrofitClientInstance.getRetrofitInstance().create(GetDataService.class);
-//        Call<FlickrResponse> call = service.getFlickrResponse();
-//        call.enqueue(new Callback<FlickrResponse>() {
-//            @Override
-//            public void onResponse(Call<FlickrResponse> call, Response<FlickrResponse> response) {
-//                Log.d("78741", "onRESPONSE Received");
-//                swipeRefreshLayout.setRefreshing(false);
-//                adapter.updateData(response.body().items);
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<FlickrResponse> call, Throwable t) {
-//                swipeRefreshLayout.setRefreshing(false);
-//                Toast.makeText(MainActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_LONG).show();
-//                Log.d("Failure", t.toString());
-//            }
-//        });
-//    }
-
-
 
     private void setSwipeListener() {
         ViewPager viewPager = findViewById(R.id.ViewPager);
