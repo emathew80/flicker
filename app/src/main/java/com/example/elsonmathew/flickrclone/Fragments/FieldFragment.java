@@ -23,6 +23,7 @@ public class FieldFragment extends Fragment {
     private Items items;
 
 
+
     @Override
     public void onCreate (final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
