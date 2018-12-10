@@ -1,8 +1,8 @@
 package com.example.elsonmathew.flickrclone.Model;
 
-import com.example.elsonmathew.flickrclone.FetchJSONData;
+import java.io.Serializable;
 
-public class FlickrFeed {
+public class FlickrFeed implements Serializable {
     public String mediaURL;
     public String imgTitle;
 
