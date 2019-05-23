@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "353685437568",
+    "firebase_url": "https://flickrthrough-65007.firebaseio.com",
+    "project_id": "flickrthrough-65007",
+    "storage_bucket": "flickrthrough-65007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353685437568:android:e05dbcbb59e574a7",
+        "android_client_info": {
+          "package_name": "com.example.elsonmathew.flickrclone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "353685437568-o94kfeq58134dd95vjlgv97cug0aofbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrFv4qs-kb0bH7Hcw1-F9Q8KcHrFyRtfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "353685437568-o94kfeq58134dd95vjlgv97cug0aofbl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

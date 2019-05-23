@@ -20,7 +20,8 @@
                     app:contentPaddingRight="30dp"
                     app:contentPaddingLeft="30dp"
                     app:cardMaxElevation="30dp">
-                    <RelativeLayout
+
+            <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:paddingTop="40dp"
@@ -30,6 +31,7 @@
                             android:layout_height="300dp"
                             android:id="@+id/imgView"
                             android:scaleType="centerCrop" />
+
                         <View
                             android:id="@+id/imgDivider"
                             android:layout_below="@+id/imgView"
@@ -63,8 +65,7 @@
                             android:id="@+id/textView4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:ellipsize="end"
-                            android:maxLines="1"/>
+                            android:ellipsize="end"/>
 
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>

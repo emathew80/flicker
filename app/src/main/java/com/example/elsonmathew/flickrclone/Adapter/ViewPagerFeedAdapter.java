@@ -2,6 +2,7 @@ package com.example.elsonmathew.flickrclone.Adapter;
 import android.os.Bundle;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
 import android.util.Log;
 import android.view.ViewGroup;
 import com.example.elsonmathew.flickrclone.Fragments.FieldFragment;
